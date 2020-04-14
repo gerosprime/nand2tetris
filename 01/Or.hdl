@@ -14,5 +14,11 @@ CHIP Or {
     OUT out;
 
     PARTS:
+    // !(!a ^ !b) - I based this on De-Morgans Law
     // Put your code here:
+    Not(in = a, out = notA);
+    Not(in = b, out = notB);
+    And(a = notA, b = notB, out = nAandnB);
+    Not(in = nAandnB, out = out);
+    
 }
